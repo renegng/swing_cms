@@ -1,7 +1,7 @@
 module.exports = [{
     entry: './static/css/swing_app.scss',
     output: {
-        path: path.resolve(__dirname, "static/css"),
+        path: __dirname + "static/css",
         // This is necessary for webpack to compile
         // But we never use style-bundle.js
         filename: 'style-bundle.js'
@@ -31,7 +31,7 @@ module.exports = [{
 {
     entry: "./static/js/swing_app.js",
     output: {
-        path: path.resolve(__dirname, "static/js"),
+        path: __dirname + "static/js",
         filename: "swing-bundle.js"
     },
     module: {
