@@ -1,9 +1,9 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World, this is RXDBit first Python/Flask attempt!... now with Debug mode ON!'
+    return render_template('home.html')
 
 @app.route('/user/<username>/')
 def user(username):
