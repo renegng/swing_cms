@@ -169,3 +169,6 @@ typings/
 
 # next.js build output
 .next
+
+# sass compile js placeholder
+static/css/compile_placeholder.js
