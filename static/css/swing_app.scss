@@ -1,4 +1,55 @@
+$mdc-theme-primary: #FEDBD0;
+$mdc-theme-on-primary: #442C2E;
+$mdc-theme-secondary: #FEEAE6;
+$mdc-theme-on-secondary: #442C2E;
+$mdc-theme-surface: #FFFBFA;
+$mdc-theme-on-surface: #442C2E;
+$mdc-theme-background: #FFFFFF;
+$mdc-theme-on-background: #442C2E;
+
 @import "@material/button/mdc-button";
+@import "@material/drawer/mdc-drawer";
+@import "@material/top-app-bar/mdc-top-app-bar";
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1rem;
+  font-family: 'Roboto', 'Open Sans', sans-serif;
+}
+
+.maincontainer {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 4rem auto 3rem;
+  grid-template-columns: 2fr 10fr;
+  grid-template-areas: "header header" 
+                       "nav main"
+                       "nav footer";
+}
+
+.s-header {
+  grid-area: header;
+}
+
+.s-nav {
+  grid-area: nav;
+  @include mdc-drawer-fill-color-accessible(primary);
+  @include mdc-drawer-ink-color(on-primary);
+}
+
+.s-content {
+  grid-area: main;
+}
+
+.s-footer {
+  grid-area: footer;
+}
 
 .foo-button {
   @include mdc-button-ink-color(teal);
