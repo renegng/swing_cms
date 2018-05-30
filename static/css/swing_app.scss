@@ -7,6 +7,7 @@ $mdc-theme-on-surface: #442C2E;
 $mdc-theme-background: #FFFFFF;
 $mdc-theme-on-background: #442C2E;
 
+@import "@material/list/mdc-list";
 @import "@material/button/mdc-button";
 @import "@material/drawer/mdc-drawer";
 @import "@material/top-app-bar/mdc-top-app-bar";
@@ -23,14 +24,15 @@ body {
   font-family: 'Roboto', 'Open Sans', sans-serif;
 }
 
+// Main Layout
 .maincontainer {
   height: 100%;
   display: grid;
-  grid-template-rows: 4rem auto 3rem;
-  grid-template-columns: 2fr 10fr;
-  grid-template-areas: "header header" 
-                       "nav main"
-                       "nav footer";
+  grid-template-columns: 16rem auto 16rem;
+  grid-template-rows: 3.5rem auto 2rem;
+  grid-template-areas: "header header header" 
+                       "nav main main"
+                       "nav footer footer";
 }
 
 .s-header {
@@ -49,6 +51,15 @@ body {
 
 .s-footer {
   grid-area: footer;
+}
+
+// Material Design Components
+.mdc-top-app-bar__row {
+  height: 3.5rem;
+}
+
+.mdc-drawer__drawer {
+  vertical-align: top;
 }
 
 .foo-button {
