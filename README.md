@@ -27,3 +27,4 @@ Swing CMS is being develop with the following libraries:
     - @material/ripple
     - @material/button
     - @material/drawer
+    - @material/list

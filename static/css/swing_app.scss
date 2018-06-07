@@ -13,7 +13,7 @@ $mdc-theme-on-background: #442C2E;
 @import "@material/top-app-bar/mdc-top-app-bar";
 
 html, body {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -35,6 +35,16 @@ body {
                        "nav footer footer";
 }
 
+.landingcontainer {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 16rem auto 16rem;
+  grid-template-rows: 3.5rem auto 2rem;
+  grid-template-areas: "header header header" 
+                       "main main main"
+                       "footer footer footer";
+}
+
 .s-header {
   grid-area: header;
 }
@@ -47,10 +57,83 @@ body {
 
 .s-content {
   grid-area: main;
+  margin: 0.25rem 0.5rem;
 }
 
 .s-footer {
   grid-area: footer;
+}
+
+// Body Content Style
+// Parallax Effect
+.parallax {
+  /* 
+    with parallax = background-attachment: fixed;
+    without parallax = background-attachment: scroll;
+  */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax--big {
+  height: 90vh;
+}
+
+.parallax--medium {
+  height: 70vh;
+}
+
+.parallax--small {
+  height: 50vh;
+}
+
+.parallax-caption {
+  display: flex;
+  height: inherit;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  img {
+    padding: 0.25rem;
+  }
+}
+
+.parallax-caption--dark {
+  padding: 2rem;
+  color: $mdc-theme-surface;
+  background-color: $mdc-theme-on-surface;
+}
+
+.parallax-caption--light {
+  padding: 2rem;
+  color: $mdc-theme-on-surface;
+  background-color: $mdc-theme-surface;
+}
+
+.parallax-div {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  padding: 2rem 4rem;
+  h2 {
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  p {
+    text-align: justify;
+  }
+}
+
+.parallax-div--light {
+  color: $mdc-theme-on-surface;
+  background-color: $mdc-theme-surface;
+}
+
+.parallax-div--dark {
+  color: $mdc-theme-surface;
+  background-color: $mdc-theme-on-surface;
 }
 
 // Material Design Components
