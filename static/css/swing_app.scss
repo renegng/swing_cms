@@ -11,6 +11,8 @@ $mdc-theme-on-background: #442C2E;
 @import "@material/button/mdc-button";
 @import "@material/drawer/mdc-drawer";
 @import "@material/top-app-bar/mdc-top-app-bar";
+@import "@material/layout-grid/mdc-layout-grid";
+@import "aos/src/sass/aos";
 
 html, body {
   width: 100%;

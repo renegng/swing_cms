@@ -1,7 +1,11 @@
+import AOS from 'aos';
 import { MDCRipple } from '@material/ripple';
 import { MDCTopAppBar } from '@material/top-app-bar/index';
 import { MDCPersistentDrawer, MDCPersistentDrawerFoundation, MDCPermanentDrawer, MDCPermanentDrawerFoundation, MDCTemporaryDrawer, MDCTemporaryDrawerFoundation, util } from '@material/drawer';
 import { isNull } from 'util';
+
+// Initialize AOS
+AOS.init();
 
 // Material Top-app-bar
 var topAppBar = null;

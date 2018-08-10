@@ -23,8 +23,5 @@ Swing CMS is being develop with the following libraries:
     - babel-core 
     - babel-loader
     - babel-preset-es2015
-    - @material/top-app-bar
-    - @material/ripple
-    - @material/button
-    - @material/drawer
-    - @material/list
+    - material-components-web
+    - aos (animation on scroll)
