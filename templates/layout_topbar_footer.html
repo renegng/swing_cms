@@ -1,0 +1,46 @@
+{% extends 'layout_main.html' %}
+{% block topbar %}
+<header class="s-header mdc-top-app-bar">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <button class="menu material-icons mdc-top-app-bar__navigation-icon">
+                menu
+            </button>
+            <span class="mdc-top-app-bar__title">Swing CMS - RXDBit</span>
+        </section>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+            <button class="menu material-icons mdc-top-app-bar__action-item" aria-label="Download" alt="Download">
+                file_download
+            </button>
+            <button class="menu material-icons mdc-top-app-bar__action-item" aria-label="Print this page" alt="Print this page">
+                print
+            </button>
+            <button class="menu material-icons mdc-top-app-bar__action-item" aria-label="Bookmark this page" alt="Bookmark this page">
+                bookmark
+            </button>
+        </section>
+    </div>
+</header>
+<aside class="s-nav mdc-drawer mdc-drawer--temporary">
+    <nav class="mdc-drawer__drawer">
+        <header class="mdc-drawer__header">
+            <div class="mdc-drawer__header-content">
+                My navigation menu
+            </div>
+        </header>
+        <nav id="icon-with-text-demo" class="mdc-drawer__content mdc-list">
+            <a class="mdc-list-item mdc-list-item--activated" href="#">
+                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">inbox</i>Inbox
+            </a>
+            <a class="mdc-list-item" href="#">
+                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">star</i>Star
+            </a>
+        </nav>
+    </nav>
+</aside>
+{% endblock %}
+{% block footer %}
+<footer class="s-footer">
+    My Footer
+</footer>
+{% endblock %}

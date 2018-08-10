@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="generator" content="Swing CMS">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
-    <meta name="description" content="Swing easily over WEBsite development with Swing CMS!">
-    <title>Swing CMS</title>
+    <meta name="description" content="{% block page_description %}{% endblock %}">
+    <title>{% block page_title %}{% endblock %}</title>
     <!--
       The `<base>` tag below is present to support two advanced deployment options:
       1) Differential serving. 2) Serving from a non-root path.
@@ -61,8 +61,13 @@
     <meta property="og:site_name" content="my-app">
     <meta property="og:image" content="../static/images/manifest/icon-144x144.png" />
 </head>
-<body>
-    {% block body %}{% endblock %}
+<body class="mdc-typography">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    {% block topbar %}{% endblock %}
+    <div class="s-bodycontent">
+        {% block body %}{% endblock %}
+        {% block footer %}{% endblock %}
+    </div>
     <script src="../static/js/swing-bundle.js" async></script>
 </body>
 </html>

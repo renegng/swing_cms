@@ -7,12 +7,14 @@ $mdc-theme-on-surface: #442C2E;
 $mdc-theme-background: #FFFFFF;
 $mdc-theme-on-background: #442C2E;
 
-@import "@material/list/mdc-list";
+@import "aos/src/sass/aos";
 @import "@material/button/mdc-button";
 @import "@material/drawer/mdc-drawer";
-@import "@material/top-app-bar/mdc-top-app-bar";
 @import "@material/layout-grid/mdc-layout-grid";
-@import "aos/src/sass/aos";
+@import "@material/list/mdc-list";
+@import "@material/toolbar/mdc-toolbar";
+@import "@material/top-app-bar/mdc-top-app-bar";
+@import "@material/typography/mdc-typography";
 
 html, body {
   width: 100%;
@@ -22,48 +24,44 @@ html, body {
 }
 
 body {
+  display: inline-flex;
   font-size: 1rem;
   font-family: 'Roboto', 'Open Sans', sans-serif;
 }
 
 // Main Layout
-.maincontainer {
-  height: 100%;
-  display: grid;
-  grid-template-columns: 16rem auto 16rem;
-  grid-template-rows: 3.5rem auto 2rem;
-  grid-template-areas: "header header header" 
-                       "nav main main"
-                       "nav footer footer";
+.s-bodycontent{
+  display: block;
 }
 
-.landingcontainer {
-  height: 100%;
+.s-maincontainer {
+  //height: 100%;
   display: grid;
-  grid-template-columns: 16rem auto 16rem;
-  grid-template-rows: 3.5rem auto 2rem;
-  grid-template-areas: "header header header" 
-                       "main main main"
-                       "footer footer footer";
+  grid-template-columns: 12fr;
+  grid-template-areas: "main";
+}
+
+.s-landingcontainer {
+  //height: 100%;
+  display: grid;
+  grid-template-columns: 12fr;
+  grid-template-areas: "main";
 }
 
 .s-header {
-  grid-area: header;
 }
 
 .s-nav {
-  grid-area: nav;
   @include mdc-drawer-fill-color-accessible(primary);
   @include mdc-drawer-ink-color(on-primary);
 }
 
 .s-content {
-  grid-area: main;
+  //grid-area: main;
   margin: 0.25rem 0.5rem;
 }
 
 .s-footer {
-  grid-area: footer;
 }
 
 // Body Content Style
@@ -140,11 +138,11 @@ body {
 
 // Material Design Components
 .mdc-top-app-bar__row {
-  height: 3.5rem;
+  //height: 3.5rem;
 }
 
 .mdc-drawer__drawer {
-  vertical-align: top;
+  //vertical-align: top;
 }
 
 .foo-button {
