@@ -12,6 +12,7 @@ $mdc-theme-on-background: #442C2E;
 @import "@material/drawer/mdc-drawer";
 @import "@material/layout-grid/mdc-layout-grid";
 @import "@material/list/mdc-list";
+@import "@material/menu/mdc-menu";
 @import "@material/toolbar/mdc-toolbar";
 @import "@material/top-app-bar/mdc-top-app-bar";
 @import "@material/typography/mdc-typography";
@@ -32,6 +33,8 @@ body {
 // Main Layout
 .s-bodycontent{
   display: block;
+  margin-top: 4rem;
+  width: 100vw;
 }
 
 .s-maincontainer {
@@ -52,8 +55,9 @@ body {
 }
 
 .s-nav {
-  @include mdc-drawer-fill-color-accessible(primary);
+  @include mdc-drawer-fill-color(primary);
   @include mdc-drawer-ink-color(on-primary);
+  @include mdc-drawer-fill-color-accessible(secondary);
 }
 
 .s-content {
@@ -62,6 +66,13 @@ body {
 }
 
 .s-footer {
+}
+
+.topAppBar-button{
+  @include mdc-button-container-fill-color(secondary);
+  @include mdc-button-ink-color(on-secondary);
+  @include mdc-button-outline-color(on-surface);
+  @include mdc-states(on-secondary);
 }
 
 // Body Content Style
@@ -137,15 +148,33 @@ body {
 }
 
 // Material Design Components
-.mdc-top-app-bar__row {
-  //height: 3.5rem;
+.mdc-menu-anchor {
+  margin-right: 0.5rem;
 }
 
-.mdc-drawer__drawer {
-  //vertical-align: top;
+// Font Awesome
+.fa {
+  display: inline-flex;
+  font-size: 1.5rem;
+  justify-content: flex-start;
 }
 
-.foo-button {
-  @include mdc-button-ink-color(teal);
-  @include mdc-states(teal);
+.classic-color-fb{
+  color: #3B5998 !important;
+}
+
+.classic-color-gp{
+  color: #DB4437 !important;
+}
+
+.classic-color-li{
+  color: #0077B5 !important;
+}
+
+.classic-color-tw{
+  color: #1DA1F2 !important;
+}
+
+.classic-color-wa{
+  color: #25d366 !important;
 }

@@ -9,14 +9,43 @@
             <span class="mdc-top-app-bar__title">Swing CMS - RXDBit</span>
         </section>
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-            <button class="menu material-icons mdc-top-app-bar__action-item" aria-label="Download" alt="Download">
-                file_download
-            </button>
-            <button class="menu material-icons mdc-top-app-bar__action-item" aria-label="Print this page" alt="Print this page">
-                print
-            </button>
-            <button class="menu material-icons mdc-top-app-bar__action-item" aria-label="Bookmark this page" alt="Bookmark this page">
-                bookmark
+            <div class="mdc-menu-anchor">
+                <!-- 
+                <button id="shareButton" class="material-icons mdc-top-app-bar__action-item" aria-label="Share" alt="Share">
+                    share
+                </button>
+                -->
+                <button id="shareButton" class="mdc-button topAppBar-button" aria-label="Share" alt="Share">
+                    <i class="material-icons mdc-button__icon" aria-hidden="true">share</i>
+                    Share
+                </button>
+                <div id="shareMenu" class="mdc-menu" tabindex="-1">
+                    <ul class="mdc-list mdc-menu__items" role="menu" aria-hidden="true">
+                        <li class="mdc-list-item" role="menuitem" tabindex="0">
+                            <i class="classic-color-fb mdc-list-item__graphic fa fa-facebook" aria-hidden="true"></i>
+                            Facebook
+                        </li>
+                        <li class="mdc-list-item" role="menuitem" tabindex="0">
+                            <i class="classic-color-gp mdc-list-item__graphic fa fa-google-plus" aria-hidden="true"></i>
+                            Google+
+                        </li>
+                        <li class="mdc-list-item" role="menuitem" tabindex="0">
+                            <i class="classic-color-li mdc-list-item__graphic fa fa-linkedin" aria-hidden="true"></i>
+                            LinkedIn
+                        </li>
+                        <li class="mdc-list-item" role="menuitem" tabindex="0">
+                            <i class="classic-color-tw mdc-list-item__graphic fa fa-twitter" aria-hidden="true"></i>
+                            Twitter
+                        </li>
+                        <li class="mdc-list-item" role="menuitem" tabindex="0">
+                            <i class="classic-color-wa mdc-list-item__graphic fa fa-whatsapp" aria-hidden="true"></i>
+                            WhatsApp
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <button id="loginButton" class="mdc-button mdc-button--outlined topAppBar-button" aria-label="Login" alt="Login">
+                Login
             </button>
         </section>
     </div>

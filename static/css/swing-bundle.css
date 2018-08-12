@@ -2071,6 +2071,96 @@ a.mdc-list-item {
   /* @alternate */
   color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87)); }
 
+.mdc-menu {
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  background-color: #FFFFFF;
+  /* @alternate */
+  background-color: var(--mdc-theme-background, #FFFFFF);
+  display: none;
+  position: absolute;
+  box-sizing: border-box;
+  min-width: 170px;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 32px);
+  margin: 0;
+  padding: 0;
+  transform: scale(1);
+  transform-origin: top left;
+  border-radius: 2px;
+  opacity: 0;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: auto;
+  will-change: transform, opacity;
+  z-index: 4; }
+  .mdc-menu:focus {
+    outline: none; }
+  .mdc-menu--animating-open {
+    display: inline-block;
+    transform: scale(0.8);
+    transition: opacity 0.03s linear, transform 0.12s cubic-bezier(0, 0, 0.2, 1);
+    opacity: 0;
+    overflow-y: hidden; }
+  .mdc-menu--open {
+    display: inline-block;
+    transform: scale(1);
+    opacity: 1; }
+  .mdc-menu--animating-closed {
+    display: inline-block;
+    transition: opacity 0.075s linear;
+    opacity: 0;
+    overflow-y: hidden; }
+  .mdc-menu__items {
+    box-sizing: border-box;
+    transform: scale(1);
+    overflow-x: hidden;
+    overflow-y: auto;
+    will-change: transform; }
+    .mdc-menu__items > .mdc-list-item {
+      cursor: pointer; }
+    .mdc-menu--animating .mdc-menu__items {
+      overflow-y: hidden; }
+  .mdc-menu--animating-open > .mdc-menu__items {
+    transform: scale(1.25); }
+  .mdc-menu--open > .mdc-menu__items {
+    transform: scale(1); }
+  [dir="rtl"] .mdc-menu {
+    transform-origin: top right; }
+  .mdc-menu .mdc-list-group,
+  .mdc-menu .mdc-list {
+    padding: 8px 0; }
+  .mdc-menu .mdc-list-item {
+    font-family: Roboto, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    font-weight: 400;
+    letter-spacing: 0.00937em;
+    text-decoration: inherit;
+    text-transform: inherit;
+    position: relative;
+    outline: none;
+    color: inherit;
+    text-decoration: none;
+    user-select: none; }
+  .mdc-menu .mdc-list-item__graphic {
+    color: rgba(0, 0, 0, 0.54);
+    /* @alternate */
+    color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54)); }
+  .mdc-menu .mdc-list-item[aria-disabled="true"] {
+    color: rgba(0, 0, 0, 0.38);
+    /* @alternate */
+    color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38));
+    cursor: default;
+    pointer-events: none; }
+    .mdc-menu .mdc-list-item[aria-disabled="true"]:focus::before {
+      opacity: 0; }
+
+.mdc-menu-anchor {
+  position: relative;
+  overflow: visible; }
+
 .mdc-toolbar {
   background-color: #FEDBD0;
   /* @alternate */
@@ -2831,7 +2921,9 @@ body {
   font-family: 'Roboto', 'Open Sans', sans-serif; }
 
 .s-bodycontent {
-  display: block; }
+  display: block;
+  margin-top: 4rem;
+  width: 100vw; }
 
 .s-maincontainer {
   display: grid;
@@ -2844,18 +2936,64 @@ body {
   grid-template-areas: "main"; }
 
 .s-nav {
-  color: rgba(0, 0, 0, 0.87);
   color: #442C2E;
   /* @alternate */
-  color: var(--mdc-theme-on-primary, #442C2E); }
+  color: var(--mdc-theme-on-primary, #442C2E);
+  color: rgba(0, 0, 0, 0.87); }
   .s-nav.mdc-drawer--permanent,
   .s-nav .mdc-drawer__drawer {
     background-color: #FEDBD0;
     /* @alternate */
     background-color: var(--mdc-theme-primary, #FEDBD0); }
+  .s-nav.mdc-drawer--permanent,
+  .s-nav .mdc-drawer__drawer {
+    background-color: #FEEAE6;
+    /* @alternate */
+    background-color: var(--mdc-theme-secondary, #FEEAE6); }
 
 .s-content {
   margin: 0.25rem 0.5rem; }
+
+.topAppBar-button:not(:disabled) {
+  background-color: #FEEAE6; }
+  @supports not (-ms-ime-align: auto) {
+    .topAppBar-button:not(:disabled) {
+      /* @alternate */
+      background-color: var(--mdc-theme-secondary, #FEEAE6); } }
+
+.topAppBar-button:not(:disabled) {
+  color: #442C2E;
+  /* @alternate */
+  color: var(--mdc-theme-on-secondary, #442C2E); }
+
+.topAppBar-button:not(:disabled) {
+  border-color: #442C2E;
+  /* @alternate */
+  border-color: var(--mdc-theme-on-surface, #442C2E); }
+
+.topAppBar-button::before, .topAppBar-button::after {
+  background-color: #442C2E; }
+  @supports not (-ms-ime-align: auto) {
+    .topAppBar-button::before, .topAppBar-button::after {
+      /* @alternate */
+      background-color: var(--mdc-theme-on-secondary, #442C2E); } }
+
+.topAppBar-button:hover::before {
+  opacity: 0.04; }
+
+.topAppBar-button:not(.mdc-ripple-upgraded):focus::before, .topAppBar-button.mdc-ripple-upgraded--background-focused::before {
+  transition-duration: 75ms;
+  opacity: 0.12; }
+
+.topAppBar-button:not(.mdc-ripple-upgraded)::after {
+  transition: opacity 150ms linear; }
+
+.topAppBar-button:not(.mdc-ripple-upgraded):active::after {
+  transition-duration: 75ms;
+  opacity: 0.16; }
+
+.topAppBar-button.mdc-ripple-upgraded {
+  --mdc-ripple-fg-opacity: 0.16; }
 
 .parallax {
   /* 
@@ -2914,25 +3052,25 @@ body {
   color: #FFFBFA;
   background-color: #442C2E; }
 
-.foo-button:not(:disabled) {
-  color: teal; }
+.mdc-menu-anchor {
+  margin-right: 0.5rem; }
 
-.foo-button::before, .foo-button::after {
-  background-color: teal; }
+.fa {
+  display: inline-flex;
+  font-size: 1.5rem;
+  justify-content: flex-start; }
 
-.foo-button:hover::before {
-  opacity: 0.04; }
+.classic-color-fb {
+  color: #3B5998 !important; }
 
-.foo-button:not(.mdc-ripple-upgraded):focus::before, .foo-button.mdc-ripple-upgraded--background-focused::before {
-  transition-duration: 75ms;
-  opacity: 0.12; }
+.classic-color-gp {
+  color: #DB4437 !important; }
 
-.foo-button:not(.mdc-ripple-upgraded)::after {
-  transition: opacity 150ms linear; }
+.classic-color-li {
+  color: #0077B5 !important; }
 
-.foo-button:not(.mdc-ripple-upgraded):active::after {
-  transition-duration: 75ms;
-  opacity: 0.16; }
+.classic-color-tw {
+  color: #1DA1F2 !important; }
 
-.foo-button.mdc-ripple-upgraded {
-  --mdc-ripple-fg-opacity: 0.16; }
+.classic-color-wa {
+  color: #25d366 !important; }
