@@ -2953,7 +2953,62 @@ body {
 
 .s-footer {
   color: #FFFBFA;
-  background-color: #442C2E; }
+  background-color: #442C2E;
+  padding: 2rem;
+  margin: 0rem 0.5rem;
+  font-size: 0.9rem;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 4fr 4fr 4fr;
+  grid-template-areas: "about followus contactus" "copyright copyright copyright"; }
+
+.footer-about {
+  grid-area: about;
+  margin: 0 auto; }
+
+.footer-about__text {
+  font-style: italic;
+  line-height: 1.5rem; }
+
+.footer-about__author {
+  float: right;
+  margin-top: 1rem; }
+
+.footer-followus {
+  grid-area: followus;
+  margin: 0 auto; }
+
+.footer-followus__list .mdc-list {
+  color: #FFFBFA;
+  /* @alternate */
+  color: var(--mdc-theme-surface, #FFFBFA); }
+  .footer-followus__list .mdc-list .mdc-list-item__graphic {
+    color: #FFFBFA;
+    /* @alternate */
+    color: var(--mdc-theme-surface, #FFFBFA); }
+
+.footer-contactus {
+  grid-area: contactus;
+  margin: 0 auto; }
+
+.footer-contactus__list .mdc-list {
+  color: #FFFBFA;
+  /* @alternate */
+  color: var(--mdc-theme-surface, #FFFBFA); }
+  .footer-contactus__list .mdc-list .mdc-list-item__graphic {
+    color: #FFFBFA;
+    /* @alternate */
+    color: var(--mdc-theme-surface, #FFFBFA); }
+
+.footer-copyright {
+  grid-area: copyright;
+  font-size: 0.7rem;
+  margin-top: 1rem; }
+
+.footer-section__title {
+  font-weight: bold;
+  font-variant: small-caps;
+  margin-bottom: 1rem; }
 
 .topAppBar-button:not(:disabled) {
   background-color: #FEEAE6; }
@@ -3075,3 +3130,6 @@ body {
 
 .classic-color-wa {
   color: #25d366 !important; }
+
+.classic-color-em {
+  color: #ff9932 !important; }

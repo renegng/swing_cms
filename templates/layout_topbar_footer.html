@@ -1,5 +1,4 @@
-{% extends 'layout_main.html' %}
-{% block topbar %}
+{% extends 'layout_main.html' %} {% block topbar %}
 <header class="s-header mdc-top-app-bar">
     <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
@@ -19,9 +18,13 @@
                     <i class="material-icons mdc-button__icon" aria-hidden="true">share</i>
                     Share
                 </button>
-               
+
                 <div id="shareMenu" class="mdc-menu" tabindex="-1">
                     <ul class="mdc-list mdc-menu__items" role="menu" aria-hidden="true">
+                        <li class="mdc-list-item" role="menuitem" tabindex="0">
+                            <i class="classic-color-em material-icons mdc-list-item__graphic" aria-hidden="true">email</i>
+                            Email
+                        </li>
                         <li class="mdc-list-item" role="menuitem" tabindex="0">
                             <i class="classic-color-fb mdc-list-item__graphic fa fa-facebook" aria-hidden="true"></i>
                             Facebook
@@ -68,9 +71,70 @@
         </nav>
     </nav>
 </aside>
-{% endblock %}
-{% block footer %}
+{% endblock %} {% block footer %}
 <footer class="s-footer">
-    My Footer
+    <section class="footer-about">
+        <div class="footer-section__title">
+            More about the company
+        </div>
+        <div class="footer-about__text">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed, fuga enim earum nemo nulla mollitia eum? Beatae perferendis
+            placeat commodi tenetur labore delectus reprehenderit excepturi? Expedita placeat molestias libero et laborum illo
+            quidem maiores officiis consequuntur quis, fuga ipsum. Obcaecati blanditiis libero porro autem commodi? Mollitia
+            iste quae cumque quis at provident. Ipsa aliquam laborum explicabo ipsam quas vitae.
+        </div>
+        <span class="footer-about__author">
+            Sean Alson, CEO
+        </span>
+    </section>
+    <section class="footer-followus">
+        <div class="footer-section__title">
+            Keep connected with us
+        </div>
+        <div class="footer-followus__list">
+            <ul class="mdc-list" aria-orientation="vertical" aria-hidden="true">
+                <li class="mdc-list-item">
+                    <i class="mdc-list-item__graphic fa fa-facebook" aria-hidden="true"></i>
+                    Facebook
+                </li>
+                <li class="mdc-list-item">
+                    <i class="mdc-list-item__graphic fa fa-linkedin" aria-hidden="true"></i>
+                    LinkedIn
+                </li>
+                <li class="mdc-list-item">
+                    <i class="mdc-list-item__graphic fa fa-twitter" aria-hidden="true"></i>
+                    Twitter
+                </li>
+                <li class="mdc-list-item">
+                    <i class="mdc-list-item__graphic fa fa-whatsapp" aria-hidden="true"></i>
+                    WhatsApp
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="footer-contactus">
+        <div class="footer-section__title">
+            Contact us
+        </div>
+        <div class="footer-contactus__list">
+            <ul class="mdc-list" aria-orientation="vertical" aria-hidden="true">
+                <li class="mdc-list-item">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">map</i>
+                    Find us on Google Maps
+                </li>
+                <li class="mdc-list-item">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">phone</i>
+                    +555 7898 4565
+                </li>
+                <li class="mdc-list-item">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">email</i>
+                    info@rxdbit.com
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="footer-copyright">
+        Swing CMS. All rights reserved | Design by RXDBit
+    </section>
 </footer>
 {% endblock %}

@@ -58,8 +58,69 @@ body {
 .s-footer {
   color: $mdc-theme-surface;
   background-color: $mdc-theme-on-surface;
+  padding: 2rem;
+  margin: 0rem 0.5rem;
+  font-size: 0.9rem;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 4fr 4fr 4fr;
+  grid-template-areas: "about followus contactus"
+                       "copyright copyright copyright";
 }
 
+// Footer
+.footer-about {
+  grid-area: about;
+  margin: 0 auto;
+}
+
+.footer-about__text {
+  font-style: italic;
+  line-height: 1.5rem;
+}
+
+.footer-about__author {
+  float: right;
+  margin-top: 1rem;
+}
+
+.footer-followus {
+  grid-area: followus;
+  margin: 0 auto;
+}
+
+.footer-followus__list {
+  .mdc-list {
+    @include mdc-list-item-primary-text-ink-color(surface);
+    @include mdc-list-item-graphic-ink-color(surface)
+  }
+}
+
+.footer-contactus {
+  grid-area: contactus;
+  margin: 0 auto;
+}
+
+.footer-contactus__list {
+  .mdc-list {
+    @include mdc-list-item-primary-text-ink-color(surface);
+    @include mdc-list-item-graphic-ink-color(surface)
+  }
+}
+
+.footer-copyright {
+  grid-area: copyright;
+  font-size: 0.7rem;
+  margin-top: 1rem;;
+}
+
+.footer-section__title {
+  font-weight: bold;
+  font-variant: small-caps;
+  margin-bottom: 1rem;
+}
+
+// Navigation Bar
 .topAppBar-button{
   @include mdc-button-container-fill-color(secondary);
   @include mdc-button-ink-color(on-secondary);
@@ -151,22 +212,26 @@ body {
   justify-content: flex-start;
 }
 
-.classic-color-fb{
+.classic-color-fb {
   color: #3B5998 !important;
 }
 
-.classic-color-gp{
+.classic-color-gp {
   color: #DB4437 !important;
 }
 
-.classic-color-li{
+.classic-color-li {
   color: #0077B5 !important;
 }
 
-.classic-color-tw{
+.classic-color-tw {
   color: #1DA1F2 !important;
 }
 
-.classic-color-wa{
+.classic-color-wa {
   color: #25d366 !important;
+}
+
+.classic-color-em{
+  color: #ff9932 !important;
 }
