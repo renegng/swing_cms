@@ -38,20 +38,10 @@ body {
 }
 
 .s-maincontainer {
-  //height: 100%;
   display: grid;
   grid-template-columns: 12fr;
   grid-template-areas: "main";
-}
-
-.s-landingcontainer {
-  //height: 100%;
-  display: grid;
-  grid-template-columns: 12fr;
-  grid-template-areas: "main";
-}
-
-.s-header {
+  width: 100%;
 }
 
 .s-nav {
@@ -61,11 +51,13 @@ body {
 }
 
 .s-content {
-  //grid-area: main;
+  grid-area: main;
   margin: 0.25rem 0.5rem;
 }
 
 .s-footer {
+  color: $mdc-theme-surface;
+  background-color: $mdc-theme-on-surface;
 }
 
 .topAppBar-button{

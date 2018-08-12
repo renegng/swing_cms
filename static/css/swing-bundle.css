@@ -2928,12 +2928,8 @@ body {
 .s-maincontainer {
   display: grid;
   grid-template-columns: 12fr;
-  grid-template-areas: "main"; }
-
-.s-landingcontainer {
-  display: grid;
-  grid-template-columns: 12fr;
-  grid-template-areas: "main"; }
+  grid-template-areas: "main";
+  width: 100%; }
 
 .s-nav {
   color: #442C2E;
@@ -2952,7 +2948,12 @@ body {
     background-color: var(--mdc-theme-secondary, #FEEAE6); }
 
 .s-content {
+  grid-area: main;
   margin: 0.25rem 0.5rem; }
+
+.s-footer {
+  color: #FFFBFA;
+  background-color: #442C2E; }
 
 .topAppBar-button:not(:disabled) {
   background-color: #FEEAE6; }

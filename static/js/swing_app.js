@@ -30,14 +30,14 @@ if (!isNull(document.querySelector('#shareMenu'))){
 }
 if (shareMenuButton != null){
     shareMenuButton.addEventListener('click', () => (shareMenu.open = !shareMenu.open));
-    shareMenu.setAnchorCorner(Corner.BOTTOM_END);
+    shareMenu.setAnchorCorner(Corner.BOTTOM_START);
     document.querySelector('#shareMenu').addEventListener('MDCMenu:selected', evt => shareRedirect(evt));
 }
 
 // Material Ripple
 var shareButtonRipple = null;
 var loginButtonRipple = null;
-if (!isNull(document.querySelector('#shareButton'))) {
+if (!isNull(document.querySelector('#shareButton').classList.contains('#topAppBar-button'))) {
     shareButtonRipple = new MDCRipple(document.querySelector('#shareButton'));
 }
 if (!isNull(document.querySelector('#loginButton'))) {
@@ -51,6 +51,13 @@ if (!isNull(document.querySelector('.mdc-top-app-bar'))) {
 }
 
 // Social Media Share Redirect
+// Applications URLs
+const facebookURL = "https://www.facebook.com/sharer/sharer.php?u=";
+const googlePlusURL = "https://plus.google.com/share?url=";
+const linkedInURL = "https://www.linkedin.com/shareArticle?mini=true&url=";
+const twitterURL = "https://twitter.com/share?ref_src=twsrc%5Etfw&text=";
+const whatsAppURL = "https://wa.me/?text=";
+
 function shareRedirect(e) {
     // Default text of the share message
     var shareText = "Check this out!";
@@ -63,32 +70,25 @@ function shareRedirect(e) {
     var shareTitle = document.title;
     shareTitle = encodeURIComponent(shareTitle);
     
-    // Applications URLs
-    var facebookURL = "https://www.facebook.com/sharer/sharer.php?u=" + shareMyURL;
-    var googlePlusURL = "https://plus.google.com/share?url=" + shareMyURL;
-    var linkedInURL = "https://www.linkedin.com/shareArticle?mini=true&url=" + shareMyURL + "&title=" + shareTitle;
-    var twitterURL = "https://twitter.com/share?ref_src=twsrc%5Etfw&text=" + shareText + " - " + shareTitle;
-    var whatsAppURL = "https://wa.me/?text=" + shareText + " - " + shareTitle + ": " + shareMyURL;
-
     // Open a new window to share the content
     var shareAppName = e.detail.item.textContent;
     shareAppName = shareAppName.toLowerCase().trim();
 
     switch (shareAppName){
         case 'facebook':
-            window.open(facebookURL);
+            window.open(facebookURL +  shareMyURL);
             break;
         case 'google+':
-            window.open(googlePlusURL);
+            window.open(googlePlusURL + shareMyURL);
             break;
         case 'linkedin':
-            window.open(linkedInURL);
+            window.open(linkedInURL + shareMyURL + "&title=" + shareTitle);
             break;
         case 'twitter':
-            window.open(twitterURL);
+            window.open(twitterURL + shareText + " - " + shareTitle);
             break;
         case 'whatsapp':
-            window.open(whatsAppURL);
+            window.open(whatsAppURL + shareText + " - " + shareTitle + ": " + shareMyURL);
             break;
         default:
             console.log("No implementation for SHARING to app named: " + shareAppName);
