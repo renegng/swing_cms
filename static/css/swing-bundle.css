@@ -2909,6 +2909,22 @@ a.mdc-list-item {
   text-decoration: none;
   text-transform: uppercase; }
 
+/* *******************
+- Reusable Media Queries Sentences
+
+// Laptops and Computers
+@media all and (min-width: 50em) {
+}
+
+// Tablets
+@media all and (max-width: 49.99em) {
+}
+
+// Smartphones
+@media all and (max-width: 39.99em) {
+}
+
+********************** */
 html, body {
   width: 100%;
   height: 100vh;
@@ -2919,17 +2935,6 @@ body {
   display: inline-flex;
   font-size: 1rem;
   font-family: 'Roboto', 'Open Sans', sans-serif; }
-
-.s-bodycontent {
-  display: block;
-  margin-top: 4rem;
-  width: 100vw; }
-
-.s-maincontainer {
-  display: grid;
-  grid-template-columns: 12fr;
-  grid-template-areas: "main";
-  width: 100%; }
 
 .s-nav {
   color: #442C2E;
@@ -2947,24 +2952,116 @@ body {
     /* @alternate */
     background-color: var(--mdc-theme-secondary, #FEEAE6); }
 
-.s-content {
-  grid-area: main;
-  margin: 0.25rem 0.5rem; }
+.s-bodycontent {
+  display: block;
+  margin-top: 4rem; }
 
-.s-footer {
-  color: #FFFBFA;
-  background-color: #442C2E;
-  padding: 2rem;
-  margin: 0rem 0.5rem;
-  font-size: 0.9rem;
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: 4fr 4fr 4fr;
-  grid-template-areas: "about followus contactus" "copyright copyright copyright"; }
+@media all and (min-width: 50em) {
+  .s-maincontainer {
+    display: grid;
+    grid-template-columns: 12fr;
+    grid-template-areas: "main";
+    width: 100%; }
+  .s-footer {
+    color: #FFFBFA;
+    background-color: #442C2E;
+    padding: 2rem;
+    margin: 0rem 0.5rem;
+    font-size: 0.9rem;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 4fr 4fr 4fr;
+    grid-template-areas: "about followus contactus" "copyright copyright copyright"; }
+  .s-content {
+    grid-area: main;
+    margin: 0.25rem 0.5rem; } }
 
-.footer-about {
-  grid-area: about;
-  margin: 0 auto; }
+@media all and (max-width: 49.99em) {
+  .s-maincontainer {
+    display: grid;
+    grid-template-columns: 8fr;
+    grid-template-areas: "main";
+    width: 100%; }
+  .s-footer {
+    color: #FFFBFA;
+    background-color: #442C2E;
+    padding: 2rem;
+    margin: 0rem 0.5rem;
+    font-size: 0.9rem;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 4fr 4fr;
+    grid-template-areas: "about followus" "contactus copyright"; }
+  .s-content {
+    grid-area: main;
+    margin: 0.25rem 0.5rem;
+    width: 99.99vw; } }
+
+@media all and (max-width: 39.99em) {
+  .s-maincontainer {
+    display: grid;
+    grid-template-columns: 4fr;
+    grid-template-areas: "main";
+    width: 100%; }
+  .s-footer {
+    color: #FFFBFA;
+    background-color: #442C2E;
+    padding: 2rem;
+    margin: 0rem 0.5rem;
+    font-size: 0.9rem;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 4fr;
+    grid-template-areas: "about" "followus" "contactus" "copyright"; }
+  .s-content {
+    grid-area: main;
+    margin: 0.25rem 0.5rem;
+    width: 99.99vw; } }
+
+@media all and (min-width: 50em) {
+  .footer-about {
+    grid-area: about;
+    margin: 0 auto; }
+  .footer-followus {
+    grid-area: followus;
+    margin: 0 auto; }
+  .footer-contactus {
+    grid-area: contactus;
+    margin: 0 auto; }
+  .footer-copyright {
+    grid-area: copyright;
+    font-size: 0.7rem;
+    margin-top: 1rem; } }
+
+@media all and (max-width: 49.99em) {
+  .footer-about {
+    grid-area: about;
+    margin: 0 auto; }
+  .footer-followus {
+    grid-area: followus;
+    margin: 0 auto; }
+  .footer-contactus {
+    grid-area: contactus;
+    margin: 2rem auto 0 0; }
+  .footer-copyright {
+    grid-area: copyright;
+    font-size: 0.7rem;
+    margin: auto; } }
+
+@media all and (max-width: 39.99em) {
+  .footer-about {
+    grid-area: about;
+    margin: 0 auto; }
+  .footer-followus {
+    grid-area: followus;
+    margin: 2rem auto 0 0; }
+  .footer-contactus {
+    grid-area: contactus;
+    margin: 2rem auto 0 0; }
+  .footer-copyright {
+    grid-area: copyright;
+    font-size: 0.7rem;
+    margin: 1rem auto; } }
 
 .footer-about__text {
   font-style: italic;
@@ -2973,10 +3070,6 @@ body {
 .footer-about__author {
   float: right;
   margin-top: 1rem; }
-
-.footer-followus {
-  grid-area: followus;
-  margin: 0 auto; }
 
 .footer-followus__list .mdc-list {
   color: #FFFBFA;
@@ -2987,9 +3080,10 @@ body {
     /* @alternate */
     color: var(--mdc-theme-surface, #FFFBFA); }
 
-.footer-contactus {
-  grid-area: contactus;
-  margin: 0 auto; }
+.footer-followus__list a {
+  color: inherit;
+  display: inline-flex;
+  text-decoration: inherit; }
 
 .footer-contactus__list .mdc-list {
   color: #FFFBFA;
@@ -3000,10 +3094,10 @@ body {
     /* @alternate */
     color: var(--mdc-theme-surface, #FFFBFA); }
 
-.footer-copyright {
-  grid-area: copyright;
-  font-size: 0.7rem;
-  margin-top: 1rem; }
+.footer-contactus__list a {
+  color: inherit;
+  display: inline-flex;
+  text-decoration: inherit; }
 
 .footer-section__title {
   font-weight: bold;
@@ -3051,15 +3145,55 @@ body {
 .topAppBar-button.mdc-ripple-upgraded {
   --mdc-ripple-fg-opacity: 0.16; }
 
-.parallax {
-  /* 
-    with parallax = background-attachment: fixed;
-    without parallax = background-attachment: scroll;
-  */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
+@media all and (min-width: 50em) {
+  .parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .parallax-caption {
+    display: flex;
+    height: inherit;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem; }
+    .parallax-caption img {
+      padding: 0.25rem; } }
+
+@media all and (max-width: 49.99em) {
+  .parallax {
+    background-attachment: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .parallax-caption {
+    display: flex;
+    height: inherit;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    flex-flow: column; }
+    .parallax-caption img {
+      padding: 0.25rem; } }
+
+@media all and (max-width: 39.99em) {
+  .parallax {
+    background-attachment: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .parallax-caption {
+    display: flex;
+    height: inherit;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    flex-flow: column; }
+    .parallax-caption img {
+      padding: 0.25rem; } }
 
 .parallax--big {
   height: 90vh; }
@@ -3069,16 +3203,6 @@ body {
 
 .parallax--small {
   height: 50vh; }
-
-.parallax-caption {
-  display: flex;
-  height: inherit;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  letter-spacing: 0.5rem; }
-  .parallax-caption img {
-    padding: 0.25rem; }
 
 .parallax-caption--dark {
   padding: 2rem;

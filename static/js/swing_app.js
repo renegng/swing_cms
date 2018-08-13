@@ -52,11 +52,12 @@ if (!isNull(document.querySelector('.mdc-top-app-bar'))) {
 
 // Social Media Share Redirect
 // Applications URLs
-const facebookURL = "https://www.facebook.com/sharer/sharer.php?u=";
-const googlePlusURL = "https://plus.google.com/share?url=";
-const linkedInURL = "https://www.linkedin.com/shareArticle?mini=true&url=";
-const twitterURL = "https://twitter.com/share?ref_src=twsrc%5Etfw&text=";
-const whatsAppURL = "https://wa.me/?text=";
+const emailShareUrl = "mailto:?body=";
+const facebookShareUrl = "https://www.facebook.com/sharer/sharer.php?u=";
+const googlePlusShareURL = "https://plus.google.com/share?url=";
+const linkedInShareURL = "https://www.linkedin.com/shareArticle?mini=true&url=";
+const twitterShareURL = "https://twitter.com/share?ref_src=twsrc%5Etfw&text=";
+const whatsAppShareURL = "https://wa.me/?text=";
 
 function shareRedirect(e) {
     // Default text of the share message
@@ -71,24 +72,27 @@ function shareRedirect(e) {
     shareTitle = encodeURIComponent(shareTitle);
     
     // Open a new window to share the content
-    var shareAppName = e.detail.item.textContent;
+    var shareAppName = e.detail.item.lastChild.textContent;
     shareAppName = shareAppName.toLowerCase().trim();
 
     switch (shareAppName){
+        case 'email':
+            window.open(emailShareUrl +  shareTitle + " - " + shareMyURL + "&subject=" + shareText + " - " + shareTitle);
+            break;
         case 'facebook':
-            window.open(facebookURL +  shareMyURL);
+            window.open(facebookShareUrl +  shareMyURL);
             break;
         case 'google+':
-            window.open(googlePlusURL + shareMyURL);
+            window.open(googlePlusShareURL + shareMyURL);
             break;
         case 'linkedin':
-            window.open(linkedInURL + shareMyURL + "&title=" + shareTitle);
+            window.open(linkedInShareURL + shareMyURL + "&title=" + shareTitle);
             break;
         case 'twitter':
-            window.open(twitterURL + shareText + " - " + shareTitle);
+            window.open(twitterShareURL + shareText + " - " + shareTitle);
             break;
         case 'whatsapp':
-            window.open(whatsAppURL + shareText + " - " + shareTitle + ": " + shareMyURL);
+            window.open(whatsAppShareURL + shareText + " - " + shareTitle + ": " + shareMyURL);
             break;
         default:
             console.log("No implementation for SHARING to app named: " + shareAppName);
