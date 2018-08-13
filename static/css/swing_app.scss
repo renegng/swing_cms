@@ -63,6 +63,12 @@ body {
 @media all and (min-width: 50em) {
   .s-maincontainer {
     display: grid;
+    grid-template-columns: 2fr 8fr 2fr;
+    grid-template-areas: ". main .";
+    width: 100%;
+  }
+
+  .s-maincontainer__landing {
     grid-template-columns: 12fr;
     grid-template-areas: "main";
     width: 100%;
@@ -112,7 +118,7 @@ body {
   .s-content {
     grid-area: main;
     margin: 0.25rem 0.5rem;
-    width: 99.99vw;
+    width: 97vw;
   }
 }
 
@@ -143,7 +149,7 @@ body {
   .s-content {
     grid-area: main;
     margin: 0.25rem 0.5rem;
-    width: 99.99vw;
+    width: 97vw;
   }
 }
 
@@ -384,6 +390,65 @@ body {
 .parallax-div--dark {
   color: $mdc-theme-surface;
   background-color: $mdc-theme-on-surface;
+}
+
+// Article Layout
+.s-article {
+  header {
+    h2 {
+      font-size: 2.5rem;
+    }
+    span {
+      font-size: 0.8rem;
+      font-style: italic;
+    }
+  }
+  footer {
+    margin: 1rem auto;
+    span {
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+  }
+}
+
+.s-article__media {
+  margin: 1rem auto;
+  img {
+    max-width: 100%;
+    object-fit: contain;
+  }
+  span {
+    font-size: 0.8rem;
+    font-style: italic;
+  }
+}
+
+.s-article__text {
+  margin: 1rem auto;
+  text-align: justify;
+  p {
+    .s-article__text-wrap {
+      color: $mdc-theme-on-surface;
+      font-size: 1.5rem;
+      font-weight: bold;
+      width: 40%;
+      i {
+        font-size: 2rem;
+        margin-right: 0.5rem;
+      }
+    }
+    
+    .s-article__text-wrap-left {
+      float: left;
+      margin: 1rem 1rem 1rem 0rem;
+    }
+
+    .s-article__text-wrap-right {
+      float: right;
+      margin: 1rem 0rem 1rem 1rem;
+    }
+  }
 }
 
 // Material Design Components
