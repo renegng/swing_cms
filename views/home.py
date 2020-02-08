@@ -9,3 +9,11 @@ def _landing_page():
 @home.route('/home')
 def _home():
     return render_template('home.html')
+
+@home.route('/privacypolicy/')
+def _privacypolicy():
+    return render_template('privacypolicy.html')
+
+@home.route('/termsofservice/')
+def _termsofservice():
+    return render_template('termsofservice.html')

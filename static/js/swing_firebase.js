@@ -10,10 +10,10 @@ var fbUIConfig = {
         firebase.auth.EmailAuthProvider.PROVIDER_ID
     ],
     // Terms of service url/callback.
-    tosUrl: '/terminosdelservicio/',
+    tosUrl: '/termsofservice/',
     // Privacy policy url/callback.
     privacyPolicyUrl: function () {
-        window.location.assign('/politicaprivacidad/');
+        window.location.assign('/privacypolicy/');
     }
 };
 

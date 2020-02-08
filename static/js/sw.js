@@ -4,14 +4,9 @@
 
 const filesToPreCache = [
     // Web pages
-    { url: '/', revision: '2019-08-15-1' },
-    { url: '/acercade/', revision: '2019-08-31-1' },
-    { url: '/politicaprivacidad/', revision: '2019-08-15-1' },
-    { url: '/terminosdelservicio/', revision: '2019-08-15-1' },
-    // Images
-    { url: '/static/images/manifest/bid_slogan.png', revision: '2019-08-15-1' },
-    // Media
-    { url: '/static/media/audio/tourvr/es/intro.mp3', revision: '2019-08-15-1' }
+    { url: '/', revision: '2020-02-07-1' },
+    { url: '/privacypolicy/', revision: '2020-02-07-1' },
+    { url: '/termsofservice/', revision: '2020-02-07-1' },
 ];
 
 // Importing Google's Workbox library for ServiceWorker implementation
@@ -24,8 +19,8 @@ workbox.setConfig({ debug: false });
 
 // Configuring Workbox
 workbox.core.setCacheNameDetails({
-    prefix: 'cmsv-tourvr',
-    suffix: 'v2019-08-15-1',
+    prefix: 'swing_cms',
+    suffix: 'v2020-02-07-1',
     precache: 'pre-cache',
     runtime: 'run-time',
     googleAnalytics: 'ga',
@@ -41,7 +36,7 @@ workbox.googleAnalytics.initialize();
 workbox.routing.registerRoute(
     new RegExp(/.*(?:fonts\.googleapis|fonts\.gstatic|cloudflare)\.com/),
     new workbox.strategies.StaleWhileRevalidate({
-        cacheName: 'cmsv-pwa-webfonts'
+        cacheName: 'swing-cms-webfonts'
     }),
 );
 
@@ -49,7 +44,7 @@ workbox.routing.registerRoute(
 workbox.routing.registerRoute(
     new RegExp(/\.(?:js|css)$/),
     new workbox.strategies.StaleWhileRevalidate({
-        cacheName: 'cmsv-pwa-css_js',
+        cacheName: 'swing-cms-css_js',
     })
 );
 
@@ -57,7 +52,7 @@ workbox.routing.registerRoute(
 workbox.routing.registerRoute(
     new RegExp('\.(?:png|gif|webp|jpg|jpeg|svg)$'),
     new workbox.strategies.StaleWhileRevalidate({
-        cacheName: 'cmsv-pwa-img',
+        cacheName: 'swing-cms-img',
         plugins: [
             new workbox.expiration.Plugin({
                 // Keep at most 60 entries.
