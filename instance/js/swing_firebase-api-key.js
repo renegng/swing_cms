@@ -5,7 +5,7 @@ var fbConfig = {
     databaseURL: "https://xxxxx.firebaseio.com",
     projectId: "xxxxx",
     storageBucket: "xxxxx.appspot.com",
-    messagingSenderId: "817804348000"
+    messagingSenderId: "1234567890"
 };
 
 firebase.initializeApp(fbConfig);
