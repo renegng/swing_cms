@@ -14,7 +14,7 @@ Swing CMS is being develop with the following libraries:
 - NodeJS 10.1.0
 - npm 6.0.1
 - npm libraries:
-    - webpack@3 
+    - webpack@4
     - css-loader
     - sass-loader
     - node-sass
@@ -22,7 +22,6 @@ Swing CMS is being develop with the following libraries:
     - file-loader
     - babel-core 
     - babel-loader
-    - babel-preset-es2015
     - material-components-web
     - aos (animation on scroll)
 
@@ -41,9 +40,14 @@ To install Swing CMS, follow the next steps (under Ubuntu 16.04):
 
     ~: source ./venv/bin/activate
 
-4 - Within the activated virtual environment, install Flask:
+4 - Within the activated virtual environment, install Flask and all PiP applications:
 
-    ~: pip install Flask
+    ~: pip install wheel
+    ~: pip install flask
+    ~: pip install flask-sqlalchemy
+    ~: pip install psycopg2-binary
+    ~: pip install flask-marshmallow
+    ~: deactivate
 
 5 - Install the appropriate plugin for Flash and Python to be executed on the web server:
 
@@ -73,6 +77,17 @@ To install Swing CMS, follow the next steps (under Ubuntu 16.04):
 
 10 - Deploy!
 
-** - AOS can sometimes generate some issues. To prevent that delete the .babelrc file under
+** - AOS can sometimes generate some issues. To prevent that delete the .babelrc file under the node_modules/aos folder.
 
-**   the node_modules/aos folder.
+
+# Credits to
+
+Proper credit for the following people/teams:
+- Apache HTTPD, web server that never fails.
+- Google's Material Design, Workbox and Firebase team, for making the web awesome!
+- Polymer Project, for an amazing main HTML PWA Template structure.
+- Python, Flask, NodeJS, SQLAlchemy, Marshmallow, GitHub and everyone's amazing frameworks.
+- Traversy Media, for incredible tips & tricks overall.
+- Visual Studio Code, for an incredible IDE.
+- Twitter Twemoji for the amazing emojis.
+- Ubuntu team, stable OS to work on.

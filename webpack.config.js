@@ -1,3 +1,5 @@
+const autoprefixer = require('autoprefixer');
+
 module.exports = [{
     entry: './static/css/swing_app.scss',
     output: {
@@ -18,10 +20,17 @@ module.exports = [{
                 },
                 { loader: 'extract-loader' },
                 { loader: 'css-loader' },
+                { loader: 'postcss-loader',
+                    options: {
+                        plugins: () => [autoprefixer()]
+                    }
+                },
                 {
                     loader: 'sass-loader',
                     options: {
-                        includePaths: ['./node_modules']
+                        sassOptions: {
+                            includePaths: ['./node_modules']
+                        }
                     }
                 },
             ]
@@ -29,17 +38,28 @@ module.exports = [{
     },
 },
 {
-    entry: "./static/js/swing_app.js",
+    entry: {
+        // main: ["./static/js/swing_app.js"]
+        main: [
+            // "./instance/js/swing_firebase-api-key.js",
+            // "./static/js/swing_firebase.js",
+            "./static/js/lazysizes.min.js",
+            "./static/js/swing_app.js"
+        ]
+    },
     output: {
         path: __dirname + "/static/js",
         filename: "swing-bundle.js"
     },
     module: {
-        loaders: [{
+        rules: [{
             test: /\.js$/,
+            // The following exclude is needed for FirebaseUI to work properly
+            // since it cannot detect de navigator property on the window DOM
+            // exclude: /node_modules/,
             loader: 'babel-loader',
             query: {
-                presets: ['es2015']
+                presets: ['@babel/preset-env']
             }
         }]
     },

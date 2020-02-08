@@ -57,7 +57,10 @@ local_settings.py
 db.sqlite3
 
 # Flask stuff:
-instance/
+# ************************************************************
+# Remember to uncomment instance/ since it holds private info
+# ************************************************************
+# instance/
 .webassets-cache
 
 # Scrapy stuff:
@@ -170,5 +173,8 @@ typings/
 # next.js build output
 .next
 
-# sass compile js placeholder
+# sass compiled js placeholder
 static/css/compile_placeholder.js
+
+# js compiled bundle
+static/js/swing-bundle.js
