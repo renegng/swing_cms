@@ -32,9 +32,10 @@ To install Swing CMS, follow the next steps (under Ubuntu 16.04):
 
 1 - Create a directory into which clone Swing CMS. If it's being deployed on a web server, like Apache HTTPD, create it under the proper directory. (i.e.: /var/www/)
 
-2 - Inside the prevoius folder, install a Python 3.6.6 virtual environment:
+2 - Inside the prevoius folder, install a Python 3.6.6 virtual environment and the RDBMS (MySQL) prerequisites:
 
     ~: [python | python3 | python3.6] -m venv venv
+    ~: sudo apt-get install build-essential python-dev libmysqlclient-dev
 
 3 - Inside the prevoius folder, activate the virtual environment:
 
@@ -45,8 +46,10 @@ To install Swing CMS, follow the next steps (under Ubuntu 16.04):
     ~: pip install wheel
     ~: pip install flask
     ~: pip install flask-sqlalchemy
+    ~: pip install flask-migrate
     ~: pip install psycopg2-binary
     ~: pip install flask-marshmallow
+    ~: pip install mysqlclient
     ~: deactivate
 
 5 - Install the appropriate plugin for Flash and Python to be executed on the web server:
