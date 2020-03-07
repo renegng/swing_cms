@@ -15,7 +15,6 @@ class UserInfo(db.Model):
     ui_email = db.Column(db.String(255), unique=True, nullable=False)
     ui_name = db.Column(db.String(300), unique=False, nullable=False)
     ui_phonenumber = db.Column(db.String(20), unique=False, nullable=True)
-    ui_cmsvuser = db.Column(db.String(15), unique=False, nullable=False)
     ui_notifications = db.Column(db.Boolean, unique=False, nullable=True)
     ui_enabled = db.Column(db.Boolean, unique=False, nullable=True, default=True)
     ui_datecreated = db.Column(db.DateTime, unique=False, nullable=False, index=True, default=datetime.utcnow)
